@@ -14,7 +14,7 @@ db.once('open', () => console.log('Connected to DB'));
 app.use(express.json())
 
 const subscribersRouter = require('./router/subscribers')
-app.use('./subscribers',subscribersRouter)
+app.use('/subscribers', subscribersRouter);
 
 
 const PORT = process.env.PORT || 3000;
