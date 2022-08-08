@@ -40,6 +40,7 @@ router.patch('/:id', getSubscriber, async (req, res) => {
   if (req.body.subscribedToChannel != null) {
     res.subscriber.subscribedToChannel = req.body.subscribedToChannel;
   }
+
   try {
     const updatedSubscriber = await res.subscriber.save();
     res.json(updatedSubscriber);
@@ -72,8 +73,5 @@ async function getSubscriber(req, res, next) {
   res.subscriber = subscriber;
   next();
 }
-
-
-
 
 module.exports = router;
